@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.smart</groupId>
+  <artifactId>framework</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>smart</name>
+  <packaging>pom</packaging>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <modules>
+    
+  </modules>
+
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/wangruiling/smart/issues</url>
+    </issueManagement>
+
+    <scm>
+        <url>https://github.com/wangruiling/smart</url>
+        <connection>scm:git:git://github.com/wangruiling/smart.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:wangruiling/smart.git</developerConnection>
+    </scm>
+
+
+</project>
