@@ -47,4 +47,24 @@ public class CastUtil {
         }
         return value;
     }
+
+    /**
+     * 转换为long型
+     * @param obj
+     * @return
+     */
+    public static long castLong(Object obj) {
+        return CastUtil.castLong(obj, 0);
+    }
+
+    private static long castLong(Object obj, int defaultValue) {
+        long longValue = defaultValue;
+        if (obj != null) {
+            String strValue = castString(obj);
+            if (StringUtils.isNotEmpty(strValue)) {
+                longValue = Long.parseLong(strValue);
+            }
+        }
+        return longValue;
+    }
 }
