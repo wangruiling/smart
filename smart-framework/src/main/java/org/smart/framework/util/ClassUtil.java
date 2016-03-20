@@ -39,6 +39,16 @@ public final class ClassUtil {
      * 加载类
      * 加载类需要提供类名与是否初始化的标志，这里的初始化指是否执行类的静态代码块
      * @param className
+     * @return
+     */
+    public static Class<?> loadClass(String className) {
+        return loadClass(className, false);
+    }
+
+    /**
+     * 加载类
+     * 加载类需要提供类名与是否初始化的标志，这里的初始化指是否执行类的静态代码块
+     * @param className
      * @param isInitialized
      * @return
      */
