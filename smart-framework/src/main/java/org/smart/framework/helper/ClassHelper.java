@@ -5,8 +5,10 @@ import org.smart.framework.annotation.Service;
 import org.smart.framework.helper.ConfigHelper;
 import org.smart.framework.util.ClassUtil;
 
+import java.lang.annotation.Annotation;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * 类操作助手
@@ -46,7 +48,7 @@ public final class ClassHelper {
         //}
         //return classSet;
 
-        return getClassSet4Annotation(Service.class);
+        return getClassSetByAnnotation(Service.class);
     }
 
     /**
@@ -62,18 +64,17 @@ public final class ClassHelper {
         //}
         //return classSet;
 
-        return getClassSet4Annotation(Controller.class);
+        return getClassSetByAnnotation(Controller.class);
     }
 
-    private static Set<Class<?>> getClassSet4Annotation(Class classZ) {
+    /**
+     * 获取应用包名下带有某注解的所有类
+     * @param annotationClass
+     * @return
+     */
+    public static Set<Class<?>> getClassSetByAnnotation(Class<? extends Annotation> annotationClass) {
         //return CLASS_SET.stream().filter(cls -> cls.isAnnotationPresent(classZ)).collect(Collectors.toSet());
-        Set<Class<?>> classSet = new HashSet<>();
-        for (Class<?> cls : CLASS_SET) {
-            if (cls.isAnnotationPresent(classZ)) {
-                classSet.add(cls);
-            }
-        }
-        return classSet;
+        return CLASS_SET.stream().filter(cls -> cls.isAnnotationPresent(annotationClass)).collect(Collectors.toSet());
     }
 
     /**
@@ -86,4 +87,22 @@ public final class ClassHelper {
         beanClassSet.addAll(getControllerClassSet());
         return beanClassSet;
     }
+
+    /**
+     * 获取应用包名下某父类(或接口)的所有子类(或实现)
+     * @param superClass
+     * @return
+     */
+    public static Set<Class<?>> getClassSetBysuper(Class<?> superClass) {
+//        Set<Class<?>> classSet = new HashSet<>();
+//        for (Class<?> cls : CLASS_SET) {
+//            if (superClass.isAssignableFrom(cls) && !superClass.equals(cls)) {
+//                classSet.add(cls);
+//            }
+//        }
+//        return classSet;
+        return CLASS_SET.stream().filter(cls -> superClass.isAssignableFrom(cls) && !superClass.equals(cls)).collect(Collectors.toSet());
+    }
+
+
 }

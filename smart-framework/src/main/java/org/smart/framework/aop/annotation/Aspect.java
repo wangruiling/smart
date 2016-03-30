@@ -1,4 +1,4 @@
-package org.smart.framework.annotation;
+package org.smart.framework.aop.annotation;
 
 import java.lang.annotation.*;
 

@@ -1,4 +1,4 @@
-package org.smart.framework.proxy;
+package org.smart.framework.aop.proxy;
 
 /**
  * 代理接口

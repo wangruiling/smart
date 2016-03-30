@@ -1,5 +1,6 @@
 package org.smart.framework.helper;
 
+import org.smart.framework.aop.AopHelper;
 import org.smart.framework.util.ClassUtil;
 
 /**
@@ -11,6 +12,7 @@ public final class HelperLoader {
         Class<?>[] classList = {
                 ClassHelper.class,
                 BeanHelper.class,
+                AopHelper.class,
                 IocHelper.class,
                 ControllerHelper.class
         };

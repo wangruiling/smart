@@ -1,4 +1,4 @@
-package org.smart.framework.proxy;
+package org.smart.framework.aop.proxy;
 
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
